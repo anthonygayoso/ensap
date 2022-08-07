@@ -1,0 +1,10 @@
+// se aplica display block para scroll horizontal
+table{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+th, td{
+    padding: 20px !important;
+}

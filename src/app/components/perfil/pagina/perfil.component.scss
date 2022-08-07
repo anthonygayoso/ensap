@@ -1,0 +1,40 @@
+.perfil{
+    &__contenedor{
+        padding: 20px;
+    }
+
+    &__contenedor-items1{
+        background-color: rgb(247, 246, 246);
+        padding: 30px;
+        text-align: center;
+        border-radius: 10px;
+        img{
+            height: 200px;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+       
+       
+    }
+    &__contenedor-items2{
+        background-color: rgb(247, 246, 246);
+        padding: 30px;
+        border-radius: 10px;
+
+        mat-divider{
+            margin-bottom: 18px;
+            margin-top: 18px;
+        }
+      
+    }
+  
+    b{
+     font-size: 25px;
+     font-weight: bold;
+     padding: 20px;
+    }
+    &__email{
+        color: blue;
+    }
+   
+}

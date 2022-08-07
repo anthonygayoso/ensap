@@ -1,0 +1,69 @@
+<div class="micertificacion">
+  <div class="row">
+    <div class="col-12">
+      <p class="ft-large font-weight-bold">Mi Certificación ENSAP</p>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-12">
+      <span class="text-secondary">En esta vista podras actualizar tus certificaciones de tus cursos.</span>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>Buscar por código o nombre</mat-label>
+        <input matInput placeholder="CODIGO" >
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mat-elevation-z0">
+      <!-- data source: para informacion 
+      elevation: sombreado
+      -->
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="constancia">
+          <!-- th: nombre columnas
+          td:para mostrar informacion fila por fila -->
+          <th mat-header-cell *matHeaderCellDef> Constancia </th>
+          <td mat-cell *matCellDef="let element"> 
+            <button (click)="descargar(element.constancia)" mat-stroked-button color="primary">
+              Constancia<mat-icon matSuffix>file_download</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="certificado">
+          <th mat-header-cell *matHeaderCellDef>Certificado</th>
+          <td mat-cell *matCellDef="let element"> 
+            <button (click)="descargar(element.certificado)" mat-stroked-button color="primary">
+              Certificado<mat-icon matSuffix>file_download</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="anio">
+          <th mat-header-cell *matHeaderCellDef>Año</th>
+          <td mat-cell *matCellDef="let element">{{element.anio}} </td>
+        </ng-container>
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef>Código </th>
+          <td mat-cell *matCellDef="let element">{{element.codigo}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nombres">
+          <th mat-header-cell *matHeaderCellDef> Nombres </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombres}} </td>
+        </ng-container>
+        <ng-container matColumnDef="promedio">
+          <th mat-header-cell *matHeaderCellDef>Promedio</th>
+          <td mat-cell *matCellDef="let element"> {{element.promedio}} </td>
+        </ng-container>
+        <!-- display: para conectar columna html con ts -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator></mat-paginator>
+    </div>
+  </div>
+</div>

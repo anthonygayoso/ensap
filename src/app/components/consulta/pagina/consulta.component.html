@@ -1,0 +1,76 @@
+<div class="consulta">
+ <div class="row">
+  <div class="col-12 d-flex justify-content-between">
+    <img class="consulta__minsa ml-3 mt-5" src="assets/images/MINSA.png" alt="minsa.png">
+    <img class="consulta__pueblo m-3" src="assets/images/pueblo.jpeg" alt="minsa.png">
+  </div>
+ </div>
+  <div class="row consulta__contenedor ">
+    <div class="col-10 m-auto">
+      <div class="row">
+        <div class="col-12">
+          <p class="ft-large font-weight-bold">Resultado de Búsqueda</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Escriba el nombre para buscar</mat-label>
+            <input matInput placeholder="" >
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12  mat-elevation-z0 user-contenedor-table m-auto">
+          <!-- data source: para informacion 
+          elevation: sombreado
+          -->
+          <table class="user-table" mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="codCurso">
+              <!-- th: nombre columnas
+              td:para mostrar informacion fila por fila -->
+              <th mat-header-cell *matHeaderCellDef> Cód.Curso </th>
+              <td mat-cell *matCellDef="let element"> {{element.codCurso}} </td>
+            </ng-container>
+            <ng-container matColumnDef="curso">
+              <th mat-header-cell *matHeaderCellDef> Curso </th>
+              <td mat-cell *matCellDef="let element"> {{element.curso}} </td>
+            </ng-container>
+            <ng-container matColumnDef="codFirma">
+              <th mat-header-cell *matHeaderCellDef>Cód.Firma</th>
+              <td mat-cell *matCellDef="let element"> {{element.codFirma}} </td>
+            </ng-container>
+            <ng-container matColumnDef="firma">
+              <th mat-header-cell *matHeaderCellDef> Firma </th>
+              <td mat-cell *matCellDef="let element"> {{element.firma}} </td>
+            </ng-container>
+            <ng-container matColumnDef="notaFin">
+              <th mat-header-cell *matHeaderCellDef> Nota final </th>
+              <td mat-cell *matCellDef="let element"> {{element.notaFin}} </td>
+            </ng-container>
+            <ng-container matColumnDef="resolCertif">
+              <th mat-header-cell *matHeaderCellDef> Resol.Certificado </th>
+              <td mat-cell *matCellDef="let element"> {{element.resolCertif}} </td>
+            </ng-container>
+            <ng-container matColumnDef="resolConstan">
+              <th mat-header-cell *matHeaderCellDef> Resol.Constancia </th>
+              <td mat-cell *matCellDef="let element"> {{element.resolConstan}} </td>
+            </ng-container>
+            <!-- display: para conectar columna html con ts -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-11 d-flex justify-content-end">
+      <button class="consulta__boton" mat-stroked-button color="primary" routerLink="/portal">REGRESAR</button>
+
+    </div>
+  </div>
+</div>

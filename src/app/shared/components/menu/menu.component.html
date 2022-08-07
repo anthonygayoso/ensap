@@ -1,0 +1,113 @@
+<nz-layout class="layout">
+  <nz-sider class="menu-sidebar border-right" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+    <div class="sidebar-logo pl-5 border-bottom">
+      <img src="assets/images/ensap.png" alt="ensap.jpg">
+    </div>
+    <br>
+    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item nzMatchRouter routerLink="/midashboard/dashboard" class="d-flex align-items-center">
+        <mat-icon class="mr-2">dashboard</mat-icon><span class="medium">Dashboard</span>
+      </li>
+      <!-- <div>
+        <p>Administración</p>
+      </div> -->
+            
+      <li nz-menu-item nzMatchRouter class="d-flex align-items-center">
+        <mat-icon class="mr-2">manage_accounts</mat-icon><a routerLink="/miperfil/perfil" >Mi Perfil</a>
+      </li>
+
+      <li nz-submenu nzTitle="Alumnos"nzOpen>
+        <ul>
+          <li nz-menu-item nzMatchRouter class="d-flex align-items-center">
+            <mat-icon class="mr-2">lock</mat-icon><a routerLink="/alumnos/actualizacion-clave">Actualización Clave</a>
+          </li>
+          <li nz-menu-item nzMatchRouter class="d-flex align-items-center">
+            <mat-icon class="mr-2">upload_file</mat-icon><a routerLink="/alumnos/carga-masiva">Carga Masiva</a>
+          </li>
+          <li nz-menu-item nzMatchRouter class="d-flex align-items-center">
+            <mat-icon class="mr-2">send</mat-icon><a routerLink="/alumnos/correo-smsmasivo">Correo SMS masivo</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Reportes" nzOpen>
+        <ul>
+          <li nz-menu-item nzMatchRouter class="d-flex align-items-center">
+            <mat-icon class="mr-2">update</mat-icon><a routerLink="/reportes/actualizaciones">Actualizaciones</a>
+          </li>
+          <li nz-menu-item nzMatchRouter class="d-flex align-items-center">
+            <mat-icon class="mr-2">groups</mat-icon><a routerLink="/reportes/alumnos">Alumnos</a>
+          </li>
+          <li nz-menu-item nzMatchRouter class="d-flex align-items-center">
+            <mat-icon class="mr-2">menu_book</mat-icon><a routerLink="/reportes/cursos">Cursos</a>
+          </li>
+          <li nz-menu-item nzMatchRouter class="d-flex align-items-center">
+            <mat-icon class="mr-2">notifications</mat-icon><a routerLink="/reportes/notificaciones">Notificaciones</a>
+          </li>
+        </ul>
+      </li>
+
+      <li nz-submenu nzTitle="Actividades" nzOpen>
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/actividades/certificacion">Mi certificación ENSAP</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/actividades/reconocimiento">Mi reconocimiento</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/actividades/diplomado">Mi Diplomado</a>
+          </li>
+        </ul>
+      </li>
+      
+    </ul>
+  </nz-sider>
+  <nz-layout class="right-layout">
+    <nz-header>
+      <div class="app-header">
+        <div class="row">
+          <div class="col-12 d-flex align-items-center justify-content-end">
+            <div class="app-header__avatar-img"></div>
+              <span>Anthony Gayoso</span>
+              <mat-icon class="pointer" nz-dropdown nzTrigger="click"  [nzDropdownMenu]="menu">expand_more</mat-icon>
+              <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                  <li nz-menu-item>
+                    <div class="row">
+                      <div class="col-12 app-header__option" routerLink="/miperfil/perfil">
+                        <span>Mi Perfil</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li nz-menu-item>
+                    <div class="row">
+                      <div (click)="cambiarPassword()" class="col-12 app-header__option">
+                        <span>Cambiar contraseña</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <hr>
+                  </li>
+                  <li nz-menu-item>
+                    <div class="row">
+                      <div class="col-12 app-header__option" routerLink="/login">
+                        <span>Cerrar Sesión</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </nz-dropdown-menu>
+          </div>
+        </div>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>Portal Web Ensap</nz-footer>
+  </nz-layout>
+</nz-layout>

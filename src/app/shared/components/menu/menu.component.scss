@@ -1,0 +1,64 @@
+.layout {
+    min-height: 100vh;
+  }
+  
+  .sidebar-logo {
+    padding-left: 0px;
+    overflow: hidden;
+    line-height: 64px;
+    transition: all .3s;
+  }
+  
+
+  .sidebar-logo img {
+    width: 150px;
+  }
+  
+  
+  
+  .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 12px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  nz-header {
+    background: white;
+    .app-header{
+      &__avatar-img{
+        margin-left: 36px;
+        margin-right: 12px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background-image: url("/assets/images/avatar1.png");
+        background-size: cover;
+        background-position: center;
+    }
+    }
+  }
+  
+  nz-content {
+    margin: 24px 16px 0;
+  }
+  
+  .inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 100%;
+  }
+  
+  nz-footer {
+    text-align: center;
+  }
+
+  p{
+    padding-left: 25px;
+  }
+
+  .ant-layout-sider {
+    background-color: white;
+  }
+

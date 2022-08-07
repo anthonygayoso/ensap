@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "red-hat";
+    src: url(assets/fonts/RedHatDisplay-Regular.ttf) format("opentype");
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; 
+    *{
+        font-family: "red-hat";
+    }
+    }
+
+mat-form-field{
+    width: 100% !important;
+}
+
+/* th, td{
+    padding: 0 20px !important;
+    font-size: 15px !important;
+}
+ */
+ 
+th{
+   font-weight: bold !important;
+   background-color: rgb(247, 247, 247);
+   color: black !important;
+}
+td{
+    color: rgb(85, 85, 85) !important ;
+}
+
+.col-12, .row{
+    margin: 0;
+    padding: 0;
+}
+
+.al-center{
+    margin:auto;         // para centrar directamente las columnas
+}
+
+.ft-large{
+    font-size: 20px;
+}
+
+.pointer{
+    cursor: pointer;
+}
